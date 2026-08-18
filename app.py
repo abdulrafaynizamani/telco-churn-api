@@ -77,7 +77,7 @@ def predict(data: dict):
         proba = model.predict_proba(df_final)[:,1][0]
         return {
             'churn_chance_percent': round(float(proba*100), 2),
-            'prediction':"High Risk - Retention Needed" if proba >=0.3 else "Row Risk",
+            'prediction':"High Risk - Retention Needed" if proba >=0.3 else "Low Risk",
             'threshold_used':0.3
         }
     except Exception as e:
